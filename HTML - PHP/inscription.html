@@ -21,14 +21,11 @@
     </header>
     <main class="page-inscription">
         <h2 class="inscription">Inscription</h2>
-        <form>
+        <form action="inscription.php" method="POST">
             <label for="username">Nom d'utilisateur * :</label><br><br>
             <input type="text" id="username" name="username" required>
-        </form>
-        <form>
             <label for="password">Mot de passe * :</label><br><br>
             <input type="password" id="password" name="password" required>
-        </form>
         <div class="slide-container">
             <label>Âge :</label>
             <div class="output" id="output">2 ans</div>
@@ -59,7 +56,7 @@
             <div class="phoneNumber" id="phoneNumber">07 99 99 99 99</div>
             <input id="curseur" class="curseur" type="range" min="0" max="999999999" value="799999999" step="1">
         </div>
-        <a href="draft.html" id="signin" class="signin"><button>S'inscrire</button></a>
+        <button type="submit">S'inscrire</button>
     </main>
     <p class="mention">Champs marqués (*) obligatoires.<br>Les autres informations ne seront pas sauvegardés.</p>
     <script src="../JS/inscription.js"></script>
