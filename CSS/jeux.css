@@ -9,7 +9,7 @@
 .choice {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
 }
 
@@ -18,10 +18,55 @@
     border-radius: 10px;
     align-items: center;
     text-align: center;
-    max-width: 20rem;
+    width: 20rem;
     padding: 10px 10px;
+    height: 15rem;
+    position: relative;     /* Défini une position de "référence" */
 }
 
 .container img {
     width: 15rem;
+}
+
+.bouton {
+    position: absolute;     /* Positionne par rapport à la position de référence */
+    bottom: 1rem;
+    align-items: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+@media (max-width:1460px) {
+    .choice {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        margin-bottom: 20px;
+    }
+    .gamePage {
+        height: 85rem;
+    }
+    .container {
+        height: 23.5rem;
+    }
+}
+
+@media (min-width:1461px) {
+    .text-spe {
+        display: none;
+    }
+    .bouton {
+        display: none;
+    }
+    .container:hover .text-spe {
+        display: block;
+    }
+    .container:hover .bouton {
+        display: block;
+    }
+    .container:hover {
+        height: 23.5rem;
+    }
 }
