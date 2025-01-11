@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Human Benchmark : jeu de réflexe</title>
     <link href="../CSS/style.css" rel="stylesheet" media="all">
-    <link href="../CSS/jeu-reflexe.css" rel="stylesheet" media="all">
+    <link href="../CSS/reflexe-game.css" rel="stylesheet" media="all">
 </head>
 <body>
     <header>
@@ -26,13 +26,15 @@
             <p id="troll-phrase">_________________________________________________</p>
             <b><p id="instruction">Cliquez dans la zone pour commencer...</p></b>
         </button>
-        <img class="stats" src="../Annexes/stats-reflexe.png">
-        <p class="infos">
-            Ce jeu est un simple outil de mesure de votre temps de réaction.<br><br>
-            Le temps de réaction médian est de 273 ms d'après les données collectées par<a href="https://humanbenchmark.com/tests/reactiontime" target="_blank">humanbenchmark.com.</a><br><br>
-            Cependant, il est important de préciser que ce test, dû à sa précision, est affecté par la latence de votre matériel. 
-            Utiliser un matériel avec peu de latence augmentera sensiblement votre score.
-        </p>
+        <div class="infos">
+            <img class="stats" src="../Annexes/stats-reflexe.png">
+            <p class="text">
+                Ce jeu est un simple outil de mesure de votre temps de réaction.<br><br>
+                Le temps de réaction médian est de 273 ms d'après les données collectées par <a href="https://humanbenchmark.com/tests/reactiontime" target="_blank">humanbenchmark.com</a>.<br><br>
+                Cependant, il est important de préciser que ce test, dû à sa précision, est affecté par la latence de votre matériel. 
+                Utiliser un matériel avec peu de latence augmentera sensiblement votre score.
+            </p>
+        </div>
     </main>
     <script src="../JS/jeu-reflexe.js"></script>
 </body>
