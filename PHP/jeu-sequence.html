@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Human Benchmark : jeu de mémoire</title>
+    <link href="../CSS/style.css" rel="stylesheet" media="all">
+    <link href="../CSS/jeu-sequence.css" rel="stylesheet" media="all">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="draft.html"><img src="../Annexes/logo_site.png" alt="Logo"></a>
+        </div>
+        <div class="title">
+            <h1>Human Benchmark</h1>
+        </div>
+        <div class="buttons">
+            <a href="inscription.html"><button>S'inscrire</button></a>
+            <a href="connexion.html"><button>Se connecter</button></a>
+        </div>
+    </header>
+    <main class="jeu-sequence">
+        <div id="zone-jeu" class="zone-jeu">
+            <img src="../Annexes/logo_sequence.png" alt="Logo du jeu de mémoire">
+            <div>
+                <h1 id="lvl" class="lvl">Level 0</h1>
+                <h2 id="textNum">Mémorisez le nombre qui apparaitra ici<br><br>Cliquez sur le bouton pour commencer...</h2>
+                <button id="start">Commencer</button>
+                <form id="reponse" class="reponse">
+                    <label for="userInput">Entrez votre réponse :</label><br><br>
+                    <input type="number" id="userInput" name="userInput" required><br><br>
+                    <button type="button" id="boutonRep">Soumettre</button>
+                </form>
+                <div id="progress-container">
+                    <div id="progress-bar"></div>
+                </div>                
+            </div>
+        </div>
+        <img class="stats" src="../Annexes/stats-sequence.png">
+        <div>
+            <p class="infos">
+                Ce jeu teste votre mémoire à court terme.<br><br>
+                En général, une personne moyenne est capable de retenir seulement 7 chiffres. Mais il est possible d'augmenter considérablement ce résultat en utilisant 
+                des moyens mnémotechniques.<br><br>
+                La vidéo ci-dessous montre qu'il est possible de retenir une séquence composée de milliers de chiffres ! 
+            </p>
+            <p>Source :<a href="https://www.youtube.com/@FabienOlicard" target="_blank">Fabien Olicard</a></p>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/XMdYpuTin6A?si=yG0NUE2mYrnO0aPN&amp;start=11" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </main>
+    <script src="../JS/jeu-sequence.js"></script>
+</body>
+</html>

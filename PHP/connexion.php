@@ -1,5 +1,6 @@
 <?php
-    require_once("connexion_bdd.php");
+    //require_once("connexion_bdd.php");
+    require_once("connexion_bdd_wamp_eric.php");
 
     $username = $_POST['username'];
     $password = $_POST['password'];
