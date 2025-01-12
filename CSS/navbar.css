@@ -39,9 +39,11 @@
     width: auto;
 }
 
-.navbar-title h1 {
+.navbar-title a {
     font-size: 1.5rem;
     text-align: left;
+    text-decoration: none;
+    color: black;
 }
 
 .navbar-buttons {
@@ -58,6 +60,24 @@
     border-radius: 5px;
     transition: background-color 0.3s;
     font-size: 1rem;
+    text-decoration: none;
+}
+
+.navbar-buttons-sm {
+    display: none;
+    gap: 1rem;
+}
+
+.navbar-buttons-sm .btn {
+    background-color: #313eb3;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 1.2rem;
+    text-decoration: none;
 }
 
 .navbar-buttons .btn:hover {
@@ -72,4 +92,9 @@
     .navbar-buttons {
         display: none;
     }
+
+    .navbar-buttons-sm {
+        display: flex;
+    }
+
 }

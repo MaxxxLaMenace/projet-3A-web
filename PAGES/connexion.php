@@ -38,7 +38,7 @@
             $_SESSION['password'] = $password;
 
             // Redirection
-            header('Location: draft.html');
+            header('Location: ../index.php');
             exit();
 
         } else {
@@ -61,7 +61,7 @@
 </head>
 
 <!-- NAVBAR -->
-<?php require_once("../Components/navbar.html"); ?>
+<?php require_once("../Components/navbar.php"); ?>
 
 <!-- BODY -->
 <body>
