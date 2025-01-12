@@ -1,3 +1,7 @@
+.content {
+    min-height: calc(100vh - 80px);
+}
+
 .buttons {
     visibility: hidden;
 }
@@ -78,7 +82,7 @@ option {
 .mention {
     text-align: right;
     margin-right: 20px;
-    position: fixed;
+    position: relative;
     bottom: 0;
     right: 0;
 }

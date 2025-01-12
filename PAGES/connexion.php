@@ -35,7 +35,6 @@
             session_start();
             $_SESSION['id_utilisateur'] = $id_utilisateur;
             $_SESSION['username'] = $username;
-            $_SESSION['password'] = $password;
 
             // Redirection
             header('Location: ../index.php');
@@ -88,7 +87,7 @@
         </main>
         
         <!-- TODO : modifier ca -->
-        <p>Champs marqués (*) obligatoires.<br>Les autres informations ne seront pas sauvegardés.</p>
+        <p class="mention">Champs marqués (*) obligatoires.<br>Les autres informations ne seront pas sauvegardés.</p>
 
     </div>
 
