@@ -2,7 +2,7 @@
     // Ce code PHP est exécuté si l'utilisateur à validé le formulaire d'inscription pour pouvoir le connecter puis le rediriger
 
     //require_once("connexion_bdd.php");
-    require_once("../BDD/connexion_bdd_wamp_eric.php");
+    require_once("../BDD/connexion_bdd.php");
 
     // Récupère les données envoyées par le formulaire
     $username = $_POST['username'] ?? null;
@@ -16,8 +16,8 @@
     if (isset($username)) {
 
         // Requete pour ajouter l'utilisateur en question
-        $sql = "INSERT INTO `utilisateurs_site_tp` (`id_utilisateur`, `username`, `password`, `age`, `pays`, `couleur_pref`, `numero_tel`)
-        VALUES (NULL, ?, ?, ?, ?, ?, ?) ";
+        $sql = "INSERT INTO `utilisateurs_site_TP` (`id_utilisateur`, `username`, `password`, `age`, `pays`, `couleur_pref`, `numero_tel`)
+        VALUES (NULL, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
 
         if ($stmt === false) {
@@ -59,11 +59,12 @@
     <script src="../JS/inscription.js"></script>
 </head>
 
-<!-- NAVBAR -->
-<?php require_once("../Components/navbar.php"); ?>
-
 <!-- BODY -->
 <body>
+
+    <!-- NAVBAR -->
+    <?php require_once("../Components/navbar.php"); ?>
+
     <div class="content">
 
         <main class="page-inscription">
@@ -72,6 +73,11 @@
 
             <!-- FORMULAIRE -->
             <form action="inscription.php" method="POST">
+
+                <?php if (isset($errorMsg) && !empty($errorMsg)): ?>
+                    <p style="color: red;"><?php echo $errorMsg; ?></p>
+                <?php endif; ?>
+
                 <label for="username">Nom d'utilisateur * :</label><br><br>
                 <input type="text" id="username" name="username" required>
                 <label for="password">Mot de passe * :</label><br><br>

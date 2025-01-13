@@ -82,7 +82,7 @@
             <div class="container">
                 <h2>Découvrez les différents jeux</h2>
                 <img src="Annexes/jeu.png" alt="Dessin représentant un jeu"><br>
-                <a href="jeux.html"><button><b>Découvrir</b></button></a>
+                <a href="PAGES/jeux.php"><button><b>Découvrir</b></button></a>
             </div>
             <div class="container">
                 <h2>Jettez un oeil à vos classements</h2>

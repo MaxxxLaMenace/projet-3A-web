@@ -6,6 +6,10 @@ html, body {
     /*background-image: url(../Annexes/quadrillage.png);*/
 }
 
+.content {
+    min-height: calc(100vh - 80px);
+}
+
 header {
     background-color: #a5e7f0;
     color: #000;

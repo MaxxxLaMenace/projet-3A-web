@@ -2,7 +2,7 @@
     // Ce code PHP est exécuté si l'utilisateur à validé le formulaire de connexion pour pouvoir le connecter puis le rediriger
 
     //require_once("connexion_bdd.php");
-    require_once("../BDD/connexion_bdd_wamp_eric.php");
+    require_once("../BDD/connexion_bdd.php");
 
     // Récupère les données envoyées par le formulaire
     $username = $_POST['username'] ?? null;
@@ -59,11 +59,12 @@
     <script src="../JS/inscription.js"></script>
 </head>
 
-<!-- NAVBAR -->
-<?php require_once("../Components/navbar.php"); ?>
-
 <!-- BODY -->
 <body>
+    
+    <!-- NAVBAR -->
+    <?php require_once("../Components/navbar.php"); ?>
+
     <div class="content">
         <main class="page-inscription">
 
@@ -94,4 +95,5 @@
     <!-- BAS DE PAGE -->
     <?php require_once("../Components/footer.html"); ?>
 </body>
+</html>
 
