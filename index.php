@@ -73,45 +73,56 @@
             <?php } ?>
         </div>
     </nav>
+    
+    <div class="content">
+        <main class="homePage">
 
-    <main class="homePage">
-        <div class="accroche">
-            <h1>Mesurez vos capacités cérébrales</h1>
-        </div>
-        <div class="choice">
-            <div class="container">
-                <h2>Découvrez les différents jeux</h2>
-                <img src="Annexes/jeu.png" alt="Dessin représentant un jeu"><br>
-                <a href="PAGES/jeux.php"><button><b>Découvrir</b></button></a>
+            <?php 
+                // Si l'utilisateur s'est connecté on affiche un menu différent
+                if (isset($_SESSION['id_utilisateur'])) {
+            ?>
+                <div class="msgBienvenue">
+                    <h1>Bonjour <?= $_SESSION['username'] ?> !</h1>
+                </div>
+            <?php } ?>
+            <div class="accroche">
+                <h1>Mesurez vos capacités cérébrales</h1>
             </div>
-            <div class="container">
-                <h2>Jettez un oeil à vos classements</h2>
-                <img src="Annexes/rank.png" alt="Dessin représentant un classement"><br>
-                <button><b>Découvrir</b></button>
+            <div class="choice">
+                <div class="container">
+                    <h2>Découvrez les différents jeux</h2>
+                    <img src="Annexes/jeu.png" alt="Dessin représentant un jeu"><br>
+                    <a href="PAGES/jeux.php"><button><b>Découvrir</b></button></a>
+                </div>
+                <div class="container">
+                    <h2>Jettez un oeil à vos classements</h2>
+                    <img src="Annexes/rank.png" alt="Dessin représentant un classement"><br>
+                    <a href="PAGES/classement.php"><button><b>Découvrir</b></button></a>
+                </div>
             </div>
-        </div>
-        <div class="text">
-            <p>Les preuves sicentifiques sont de plus en plus nombreuses à démontrer qu'il est possible d'augmenter significativement la probabilté de conserver
-                 une bonne santé mentale et physique durant toute notre vie.<br>
-                L'exercice physique, une bonne alimentation, une vie sociale intense et une stimumation cognitive régulière jouent tous un rôle important dans 
-                l'assurance de maintenir longtemps son cerveau agile et performant.</p>
-            <p>Plusieurs mécanismes physiologiques expliquent ce bénéfice lié à une vie intellectuelle intense :</p>
-            <ol>
-                <li>Les neurones stimulés et donc actifs reçoivent plus d'oxygène et d'éléments nutritifs.</li>
-                <li>La stimulation neuronale multiplie le nombre de connexions synaptiques.</li>
-                <li>Des neurones actifs sécrètente le facteur de croissance neuronale indispensable à leur développement et leur survie.</li>
-                <li>La régénération des neurones à partir de cellules souches embryonnaires peut se produire durant l'âge adulte.</li>
-            </ol>
-            <p>En d'autre termes, l'activité mentale complexe apporterait un effet protecteur sur le cerveau, grâce à la création de réserves cognitive et 
-                cérébrale. Ces réserves correspondent à une augmentation du nombre de neurones et des connexions entre les neurones (contrairement à ce que 
-                l'on pensait auparavent, de nouveaux neurones pourraient naître à tout âge). De plus, cette réserve est également liée à un processus actif 
-                de plasticité neuronale qui permet d'optimiser ses performances soit par le recrutement d'autres régions cérébrales, soit par l'utilisation 
-                de nouvelles startégies cognitives.</p>
-            <a href="https://www.happyneuron.fr/cerveau-et-entrainement/pourquoi-l-entrainement-cerebral" target="_blank">source : happyneuron.fr</a>
-            <p>En résumé, entraîner son cerveau est un exercice bon à pratiquer à tout âge, afin de préserver ses neurones et ainsi retarder au maximum toute 
-                dégénéressence cognitive.</p>
-        </div>
-    </main>
+            <div class="text">
+                <p>Les preuves sicentifiques sont de plus en plus nombreuses à démontrer qu'il est possible d'augmenter significativement la probabilté de conserver
+                    une bonne santé mentale et physique durant toute notre vie.<br>
+                    L'exercice physique, une bonne alimentation, une vie sociale intense et une stimumation cognitive régulière jouent tous un rôle important dans 
+                    l'assurance de maintenir longtemps son cerveau agile et performant.</p>
+                <p>Plusieurs mécanismes physiologiques expliquent ce bénéfice lié à une vie intellectuelle intense :</p>
+                <ol>
+                    <li>Les neurones stimulés et donc actifs reçoivent plus d'oxygène et d'éléments nutritifs.</li>
+                    <li>La stimulation neuronale multiplie le nombre de connexions synaptiques.</li>
+                    <li>Des neurones actifs sécrètente le facteur de croissance neuronale indispensable à leur développement et leur survie.</li>
+                    <li>La régénération des neurones à partir de cellules souches embryonnaires peut se produire durant l'âge adulte.</li>
+                </ol>
+                <p>En d'autre termes, l'activité mentale complexe apporterait un effet protecteur sur le cerveau, grâce à la création de réserves cognitive et 
+                    cérébrale. Ces réserves correspondent à une augmentation du nombre de neurones et des connexions entre les neurones (contrairement à ce que 
+                    l'on pensait auparavent, de nouveaux neurones pourraient naître à tout âge). De plus, cette réserve est également liée à un processus actif 
+                    de plasticité neuronale qui permet d'optimiser ses performances soit par le recrutement d'autres régions cérébrales, soit par l'utilisation 
+                    de nouvelles startégies cognitives.</p>
+                <a href="https://www.happyneuron.fr/cerveau-et-entrainement/pourquoi-l-entrainement-cerebral" target="_blank">source : happyneuron.fr</a>
+                <p>En résumé, entraîner son cerveau est un exercice bon à pratiquer à tout âge, afin de préserver ses neurones et ainsi retarder au maximum toute 
+                    dégénéressence cognitive.</p>
+            </div>
+        </main>
+    </div>
 
     <!-- FOOTER -->
     <footer class="footer">

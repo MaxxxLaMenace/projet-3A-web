@@ -1,12 +1,11 @@
 .homePage {
-    padding-top: 8rem;
+    padding-top: 6rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding-left: 15%;
     padding-right: 15%;
-    height: 65rem;
 }
 
 .accroche {
