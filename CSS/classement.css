@@ -1,0 +1,63 @@
+.gamePage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8rem 15% 0;
+    align-items: center;
+}
+
+.choice {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+}
+
+.container {
+    border: 3px solid #000;
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+    width: 20rem;
+    padding: 10px 10px;
+    position: relative;
+}
+
+.container img {
+    width: 15rem;
+}
+
+.bouton {
+    position: absolute;
+    bottom: 1rem;
+    align-items: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+@media (max-width:1460px) {
+    .choice {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width:1461px) {
+    .text-spe {
+        display: none;
+    }
+    .bouton {
+        display: none;
+    }
+    .container:hover .text-spe {
+        display: block;
+    }
+    .container:hover .bouton {
+        display: block;
+    }
+}

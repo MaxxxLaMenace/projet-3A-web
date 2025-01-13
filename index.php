@@ -97,7 +97,12 @@
                 <div class="container">
                     <h2>Jettez un oeil à vos classements</h2>
                     <img src="Annexes/rank.png" alt="Dessin représentant un classement"><br>
-                    <a href="PAGES/classement.php"><button><b>Découvrir</b></button></a>
+                    <a href="<?php
+                        if(isset($_SESSION['username']))
+                            echo("PAGES/classement.php");
+                        else 
+                            echo("PAGES/connexion.php");
+                        ?>"><button><b>Découvrir</b></button></a>
                 </div>
             </div>
             <div class="text">
