@@ -16,7 +16,7 @@
     if (isset($username)) {
 
         // Requete pour ajouter l'utilisateur en question
-        $sql = "INSERT INTO `utilisateurs_site_TP` (`id_utilisateur`, `username`, `password`, `age`, `pays`, `couleur_pref`, `numero_tel`)
+        $sql = "INSERT INTO `utilisateurs` (`id_utilisateur`, `username`, `password`, `age`, `pays`, `couleur_pref`, `numero_tel`)
         VALUES (NULL, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
 

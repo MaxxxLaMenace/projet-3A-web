@@ -33,7 +33,7 @@
 
     <!-- BAS DE PAGE -->
     <?php require_once("../Components/footer.html"); ?>
-    
+
     <script src="../JS/jeu-reflexe.js"></script>
 </body>
 </html>

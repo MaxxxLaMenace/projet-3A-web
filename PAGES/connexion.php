@@ -12,7 +12,7 @@
     if (isset($username) || isset($password)) {
 
         // Requete pour récupérer l'utilisateur en question
-        $sql = "SELECT id_utilisateur, username, password FROM utilisateurs_site_TP WHERE username = ? AND password = ?;";
+        $sql = "SELECT id_utilisateur, username, password FROM utilisateurs WHERE username = ? AND password = ?;";
         $stmt = $conn->prepare($sql);
 
         if ($stmt === false) {

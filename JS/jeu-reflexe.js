@@ -3,7 +3,7 @@ function getRandomDelay(min, max) {
 }
 
 
-const minDelay = 3000;
+const minDelay = 2000;
 const maxDelay = 6000;
 const randomDelay = getRandomDelay(minDelay, maxDelay);
 const reflButton = document.getElementById('reflButton');
@@ -39,6 +39,7 @@ function calculeReflexe() {
             troll.textContent = phrases[indexAlea];
             instruction.textContent = "Cliquez dans la zone pour commencer...";
             gameActive = 0;
+            enregistrerScore(time);
         }
     })
 }
@@ -53,3 +54,25 @@ reflButton.addEventListener('click', () => {
         instruction.textContent = "Attendez la couleur verte...";
     }
 })
+
+
+function enregistrerScore(score) {
+    fetch('enregistrer_score.php', {
+        method: 'POST',
+        body: JSON.stringify({ score: score }),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(response => response.json())
+    .then(result => {
+        if (result.status === 'success') {
+            console.log('Score enregistré avec succès !');
+        } else {
+            console.error('Erreur lors de l\'enregistrement :', result.message);
+        }
+    })
+    .catch(error => {
+        console.error('Erreur réseau ou autre :', error);
+    });
+}
