@@ -2,7 +2,7 @@
     // Ce code PHP est exécuté si l'utilisateur à validé le formulaire d'inscription pour pouvoir le connecter puis le rediriger
 
     //require_once("connexion_bdd.php");
-    require_once("../BDD/connexion_bdd.php");
+    require_once("../BDD/connexion_bdd_wamp_maxence.php");
 
     // Récupère les données envoyées par le formulaire
     $username = $_POST['username'] ?? null;
@@ -78,9 +78,9 @@
                     <p style="color: red;"><?php echo $errorMsg; ?></p>
                 <?php endif; ?>
 
-                <label for="username">Nom d'utilisateur * :</label><br><br>
+                <label for="username">Nom d'utilisateur * :</label>
                 <input type="text" id="username" name="username" required>
-                <label for="password">Mot de passe * :</label><br><br>
+                <label for="password">Mot de passe * :</label>
                 <input type="password" id="password" name="password" required>
                 <div class="slide-container">
                     <label>Âge :</label>

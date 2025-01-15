@@ -7,6 +7,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Human Benchmark : accueil</title>
     <link href="CSS/style.css" rel="stylesheet" media="all">
     <link href="CSS/accueil.css" rel="stylesheet" media="all">

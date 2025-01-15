@@ -1,0 +1,23 @@
+.page-inscription {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 7rem;
+}
+
+.page-inscription form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 10rem;
+}
+
+.mention {
+    text-align: right;
+    margin-right: 20px;
+    position: relative;
+    bottom: 0;
+    right: 0;
+}

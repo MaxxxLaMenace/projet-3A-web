@@ -1,18 +1,16 @@
-.buttons {
-    visibility: hidden;
-}
-
 .page-inscription {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(2, 40%);
-    row-gap: 50px;
-    padding: 150px 300px 40px 300px;
-    margin-left: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
 }
 
-.page-inscription h2 {
-    grid-column: 1/-1;
+.page-inscription form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 32rem;
 }
 
 /*--------------- Slider âge -------------*/

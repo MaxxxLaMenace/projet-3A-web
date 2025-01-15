@@ -4,7 +4,6 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    margin-top: 6rem;
 }
 
 .zone-jeu {
@@ -105,4 +104,14 @@ input[type="number"] {
         width: 20rem;
         height: 20rem;
     }
+}
+
+@media (max-width:976px) {
+    #progress-container {
+        width: 80%;
+    }
+    .text {
+        width: 70%;
+    }
+    
 }
