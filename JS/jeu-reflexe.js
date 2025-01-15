@@ -3,8 +3,8 @@ function getRandomDelay(min, max) {
 }
 
 
-const minDelay = 2000;
-const maxDelay = 6000;
+const minDelay = 1500;
+const maxDelay = 4500;
 const randomDelay = getRandomDelay(minDelay, maxDelay);
 const reflButton = document.getElementById('reflButton');
 const result = document.getElementById('result');
@@ -57,9 +57,9 @@ reflButton.addEventListener('click', () => {
 
 
 function enregistrerScore(score) {
-    fetch('enregistrer_score.php', {
+    fetch('../BACK/enregistrer_score.php', {
         method: 'POST',
-        body: JSON.stringify({ score: score }),
+        body: JSON.stringify({ score: score, jeu: "reflexe" }),
         headers: {
             'Content-Type': 'application/json',
         },
@@ -69,7 +69,7 @@ function enregistrerScore(score) {
         if (result.status === 'success') {
             console.log('Score enregistré avec succès !');
         } else {
-            console.error('Erreur lors de l\'enregistrement :', result.message);
+            console.error('Erreur lors de l\'enregistrement');
         }
     })
     .catch(error => {

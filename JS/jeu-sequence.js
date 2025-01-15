@@ -42,6 +42,7 @@ function verifReponse(event) {
         startButton.textContent = "Rejouer";                    // bouton start affiche "Rejouer" au lieu de "Continuer"
         textNum.innerHTML = "Perdu !<br>Le nombre était : "+number+"<br>Vous avez répondu : "+userInput;
         zone_jeu.style.background = "red";                      // fond rouge si mauvaise réponse
+        enregistrerScore(level - 1);
         level = 0;
     }
     textNum.style.visibility = "visible";
@@ -86,4 +87,25 @@ function startProgress(duration) {
         }
         progressBar.style.width = `${width}%`;
     }, interval);
+}
+
+function enregistrerScore(score) {
+    fetch('../BACK/enregistrer_score.php', {
+        method: 'POST',
+        body: JSON.stringify({ score: score, jeu: "sequence" }),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(response => response.json())
+    .then(result => {
+        if (result.status === 'success') {
+            console.log('Score enregistré avec succès !');
+        } else {
+            console.error('Erreur lors de l\'enregistrement');
+        }
+    })
+    .catch(error => {
+        console.error('Erreur réseau ou autre :', error);
+    });
 }

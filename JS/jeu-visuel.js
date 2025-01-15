@@ -130,6 +130,7 @@ function verifReponse() {
     else {
         console.log('faux');
         zone_jeu.style.background = 'red';
+        enregistrerScore(level - 1);
         level = 0;
         submit.textContent = 'Rejouer';
         lvl.textContent = 'Perdu !'
@@ -160,4 +161,25 @@ submit.addEventListener('click', () => {
     else {
         verifReponse();
     }
-})
+});
+
+function enregistrerScore(score) {
+    fetch('../BACK/enregistrer_score.php', {
+        method: 'POST',
+        body: JSON.stringify({ score: score, jeu: "visuel" }),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(response => response.json())
+    .then(result => {
+        if (result.status === 'success') {
+            console.log('Score enregistré avec succès !');
+        } else {
+            console.error('Erreur lors de l\'enregistrement');
+        }
+    })
+    .catch(error => {
+        console.error('Erreur réseau ou autre :', error);
+    });
+}
