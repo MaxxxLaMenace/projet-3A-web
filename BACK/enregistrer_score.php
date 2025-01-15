@@ -1,17 +1,17 @@
 <?php
+    header('Content-Type: application/json'); // La réponse sera du JSON
+
     //require_once("connexion_bdd.php");
     require_once("../BDD/connexion_bdd.php");
 
     session_start();
 
-    $id_utilisateur = $_SESSION['id_utilisateur'];
+    $id_utilisateur = $_SESSION['id_utilisateur'] ?? null;
 
     if (!isset($id_utilisateur)) {
         echo json_encode(['status' => 'disconnected']);
         exit();
     }
-
-    header('Content-Type: application/json'); // La réponse sera du JSON
 
     $data = file_get_contents('php://input');
     $decodedData = json_decode($data, true);

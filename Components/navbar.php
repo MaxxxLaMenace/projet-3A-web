@@ -26,14 +26,12 @@
         ?>
 
             <div class="navbar-buttons">
-                <a href="" class="btn" id="login-btn">Mon compte</a>
                 <form method="post" style="display:inline;">
                     <button type="submit" name="logout" class="btn">Se déconnecter</button>
                 </form>
             </div>
             <div class="navbar-buttons-sm">
-                <a href="" class="btn" id="login-btn"><i class="fa-solid fa-user"></i></a>
-                <a href="" class="btn" id="signup-btn"><i class="fa-solid fa-user-plus"></i></a>
+                <i class="fa-solid fa-right-from-bracket"></i>
             </div>
 
         <?php 

@@ -2,7 +2,7 @@
     // Ce code PHP est exécuté si l'utilisateur à validé le formulaire de connexion pour pouvoir le connecter puis le rediriger
 
     //require_once("connexion_bdd.php");
-    require_once("../BDD/connexion_bdd_wamp_maxence.php");
+    require_once("../BDD/connexion_bdd.php");
 
     // Récupère les données envoyées par le formulaire
     $username = $_POST['username'] ?? null;
