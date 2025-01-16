@@ -1,5 +1,5 @@
 <!-- HEAD -->
-<?php require_once("../Components/header.html"); ?>
+<?php require_once("../Components/header.php"); ?>
 
 <head>
     <link href="../CSS/reflexe-game.css" rel="stylesheet" media="all">

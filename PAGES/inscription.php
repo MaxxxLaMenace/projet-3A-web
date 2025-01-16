@@ -52,7 +52,7 @@
 ?>
 
 <!-- HEAD -->
-<?php require_once("../Components/header.html"); ?>
+<?php require_once("../Components/header.php"); ?>
 
 <head>
     <link href="../CSS/inscription.css" rel="stylesheet" media="all">
