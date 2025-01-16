@@ -19,9 +19,8 @@
     <div class="content">
         <main class="jeu-visuel">
             <div id="zone-jeu" class="zone-jeu">
-                <img src="../Annexes/logo_visuel.png" alt="Logo du jeu visuel">
-                <div>
-                    <h3 id="lvl">Retenez le motif qui va s'afficher puis reproduisez le</h3>
+                <div id="container-grille">
+                    <h3 id="lvl">Retenez le motif qui va s'afficher<br>puis reproduisez le</h3>
                     <div id="grille" class="grille">
                         <button class="grid1" id="grid1"></button>
                         <button class="grid1" id="grid1"></button>

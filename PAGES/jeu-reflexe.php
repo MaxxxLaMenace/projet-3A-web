@@ -7,7 +7,7 @@
 <?php require_once("../Components/header.html"); ?>
 
 <head>
-    <link href="../CSS/reflexe-game.css" rel="stylesheet" media="all">
+    <link href="../CSS/jeu-reflexe.css" rel="stylesheet" media="all">
 </head>
 
 <!-- BODY -->

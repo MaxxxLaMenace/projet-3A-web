@@ -1,0 +1,71 @@
+.jeu-visuel {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    align-items: center;
+    padding: 100px 0;
+    row-gap: 50px;
+}
+
+.zone-jeu {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    background-color: #48C6DA;
+    grid-column: 1/-1;
+    padding: 20px 150px;
+    align-items: center;
+    text-align: center;
+}
+
+#lvl {
+    margin-right: 40px;
+}
+
+.zone-jeu img {
+    height: 400px;
+}
+
+.grille {
+    padding: 0 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    align-items: center;
+    row-gap: 30px;
+}
+
+.grille button {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.grid2 {
+    display: none;
+}
+
+.grid3 {
+    display: none;
+}
+
+#lvl {
+    margin-bottom: 40px;
+}
+
+#submit {
+    margin-top: 40px;
+    margin-right: 40px;
+    width: 60%;
+    height: 30px;
+}
+
+.stats {
+    margin-left: 100px;
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+
+.infos {
+    margin-top: 50px;
+    margin-right: 100px;
+}

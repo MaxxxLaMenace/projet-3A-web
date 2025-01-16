@@ -1,40 +1,36 @@
 .jeu-sequence {
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    align-items: center;
-    padding: 100px 0;
-    row-gap: 50px;
-}
-
-.zone-jeu {
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    background-color: #48C6DA;
-    grid-column: 1/-1;
-    padding: 20px 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
 }
 
+.zone-jeu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    background-color: #48C6DA;
+    gap: 15%;
+    padding: 2rem;
+}
+
 .zone-jeu img {
-    height: 400px;
+    width: 25rem;
 }
 
-.lvl {
-    visibility: hidden;
+.textJeu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
 }
 
-.reponse {
-    display: block;
-    visibility: hidden;
-    margin-top: 50px;
-}
-
-.reponse input {
-    width: 200px;
-    height: 50px;
-    border: 2px solid #000;
-    border-radius: 5px;
+#start {
+    width: 15rem;
+    height: 2rem;
 }
 
 #progress-container {
@@ -54,15 +50,21 @@
     transition: width 0.1s ease-in-out;
 }
 
-.stats {
-    margin-left: 100px;
-    border: 2px solid #000;
-    border-radius: 10px;
+.infos {
+    display: flex;
+    flex-direction: row;
+    padding: 3rem 15%;
+    gap: 5rem;
 }
 
-.infos {
-    margin-top: 50px;
-    margin-right: 100px;
+.stats {
+    height: 30rem;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+.text {
+    max-width: 40rem;
 }
 
 input[type="number"] {
@@ -78,4 +80,38 @@ input[type="number"] {
     -webkit-appearance: none;
     margin: 0;
   }
-  
+
+@media (max-width:1020px) {
+    .zone-jeu {
+        flex-direction: column;
+        align-items: center;
+    }
+    .zone-jeu img {
+        width: 15rem;
+    }
+    #start {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width:1200px) {
+    .infos {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .stats {
+        width: 20rem;
+        height: 20rem;
+    }
+}
+
+@media (max-width:976px) {
+    #progress-container {
+        width: 80%;
+    }
+    .text {
+        width: 70%;
+    }
+    
+}

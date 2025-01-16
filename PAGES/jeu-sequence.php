@@ -7,7 +7,7 @@
 <?php require_once("../Components/header.html"); ?>
 
 <head>
-    <link href="../CSS/sequence-game.css" rel="stylesheet" media="all">
+    <link href="../CSS/jeu-sequence.css" rel="stylesheet" media="all">
 </head>
 
 <!-- BODY -->
@@ -21,8 +21,8 @@
             <div id="zone-jeu" class="zone-jeu">
                 <img src="../Annexes/logo_sequence.png" alt="Logo du jeu de mémoire">
                 <div class="textJeu">
-                    <h1 id="lvl" class="lvl">Level 0</h1>
-                    <h2 id="textNum">Mémorisez le nombre qui apparaitra ici<br><br>Cliquez sur le bouton pour commencer...</h2>
+                    <h1 id="lvl" class="lvl">Niveau 0</h1>
+                    <h3 id="textNum">Mémorisez le nombre qui apparaitra ici<br><br>Cliquez sur le bouton pour commencer...</h3>
                     <button id="start">Commencer</button>
                     <form id="reponse" class="reponse">
                         <label for="userInput">Entrez votre réponse :</label><br><br>

@@ -1,0 +1,81 @@
+.jeu-sequence {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    align-items: center;
+    padding: 100px 0;
+    row-gap: 50px;
+}
+
+.zone-jeu {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    background-color: #48C6DA;
+    grid-column: 1/-1;
+    padding: 20px 150px;
+    align-items: center;
+    text-align: center;
+}
+
+.zone-jeu img {
+    max-height: 400px;
+}
+
+.lvl {
+    visibility: hidden;
+}
+
+.reponse {
+    display: block;
+    visibility: hidden;
+    margin-top: 50px;
+}
+
+.reponse input {
+    width: 200px;
+    height: 50px;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+#progress-container {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ddd;
+    height: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 5px;
+    transition: width 0.1s ease-in-out;
+}
+
+.stats {
+    margin-left: 100px;
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+
+.infos {
+    margin-top: 50px;
+    margin-right: 100px;
+}
+
+input[type="number"] {
+    /* Pour Chrome, Safari, Edge, Opera */
+    -webkit-appearance: none;
+    -moz-appearance: textfield; /* Pour Firefox */
+    appearance: textfield;
+  }
+  
+  /* Pour éviter que les marges des spinners restent visibles dans Chrome */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  

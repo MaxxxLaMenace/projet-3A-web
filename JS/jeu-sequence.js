@@ -101,6 +101,8 @@ function enregistrerScore(score) {
     .then(result => {
         if (result.status === 'success') {
             console.log('Score enregistré avec succès !');
+        } else if (result.status == 'disconnected') {
+            console.log('Utilisateur déconnecté');  
         } else {
             console.error('Erreur lors de l\'enregistrement');
         }
