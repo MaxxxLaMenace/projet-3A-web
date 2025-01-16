@@ -5,8 +5,11 @@
 
     $id_utilisateur = $_SESSION['id_utilisateur'];
     $score_reflexe = 0;
+    $classement_reflexe = 0;
     $score_sequence = 0;
+    $classement_sequence = 0;
     $score_visuel = 0;
+    $classement_visuel = 0;
 
     if (!isset($id_utilisateur)) {
         // Redirection vers la page de connexion
@@ -14,43 +17,82 @@
         exit();
     }
 
-    // Vérifier si un score existe déjà pour cet utilisateur
-    $checkSql = "SELECT score FROM `score_reflexe` WHERE id_utilisateur = ?";
+    // -------------- SCORE REFLEXE  --------------------
+    // Vérifie si l'utilisateur existe
+    $checkSql = "SELECT count(*) as utilisateur_existe, score FROM `score_reflexe` WHERE id_utilisateur = ?";
     $stmt = $conn->prepare($checkSql);
     $stmt->bind_param("s", $id_utilisateur);
     $stmt->execute();
     $stmt->store_result();
 
-    if ($stmt->num_rows>0) {
+    // Récupérer les informations
+    $stmt->bind_result($joue_reflexe, $score_reflexe);
+    $stmt->fetch();
+
+    // Si il existe récupère son score
+    if ($joue_reflexe == 1) {
+        $scoreSql = "SELECT count(*) as classement FROM score_reflexe WHERE score < (SELECT score FROM score_reflexe WHERE id_utilisateur = ?)";
+        $stmt = $conn->prepare($scoreSql);
+        $stmt->bind_param("s", $id_utilisateur);
+        $stmt->execute();
+        $stmt->store_result();
+
         // Récupérer les informations
-        $stmt->bind_result($score_reflexe);
+        $stmt->bind_result($classement_reflexe);
         $stmt->fetch();
+        $classement_reflexe += 1;
+    }
+    
+    // -------------- SCORE SEQUENCE  --------------------
+    // Vérifie si l'utilisateur existe
+    $checkSql = "SELECT count(*) as utilisateur_existe, score FROM `score_sequence` WHERE id_utilisateur = ?";
+    $stmt = $conn->prepare($checkSql);
+    $stmt->bind_param("s", $id_utilisateur);
+    $stmt->execute();
+    $stmt->store_result();
+
+    // Récupérer les informations
+    $stmt->bind_result($joue_sequence, $score_sequence);
+    $stmt->fetch();
+
+    // Si il existe récupère son score
+    if ($joue_sequence == 1) {
+        $scoreSql = "SELECT count(*) as classement FROM score_sequence WHERE score < (SELECT score FROM score_sequence WHERE id_utilisateur = ?)";
+        $stmt = $conn->prepare($scoreSql);
+        $stmt->bind_param("s", $id_utilisateur);
+        $stmt->execute();
+        $stmt->store_result();
+
+        // Récupérer les informations
+        $stmt->bind_result($classement_sequence);
+        $stmt->fetch();
+        $classement_sequence += 1;
     }
 
-    // Vérifier si un score existe déjà pour cet utilisateur
-    $checkSql = "SELECT score FROM `score_sequence` WHERE id_utilisateur = ?";
+    // -------------- SCORE VISUEL  --------------------
+    // Vérifie si l'utilisateur existe
+    $checkSql = "SELECT count(*) as utilisateur_existe, score FROM `score_visuel` WHERE id_utilisateur = ?";
     $stmt = $conn->prepare($checkSql);
     $stmt->bind_param("s", $id_utilisateur);
     $stmt->execute();
     $stmt->store_result();
 
-    if ($stmt->num_rows>0) {
-        // Récupérer les informations
-        $stmt->bind_result($score_sequence);
-        $stmt->fetch();
-    }
+    // Récupérer les informations
+    $stmt->bind_result($joue_visuel, $score_visuel);
+    $stmt->fetch();
 
-    // Vérifier si un score existe déjà pour cet utilisateur
-    $checkSql = "SELECT score FROM `score_visuel` WHERE id_utilisateur = ?";
-    $stmt = $conn->prepare($checkSql);
-    $stmt->bind_param("s", $id_utilisateur);
-    $stmt->execute();
-    $stmt->store_result();
+    // Si il existe récupère son score
+    if ($joue_visuel == 1) {
+        $scoreSql = "SELECT count(*) as classement FROM score_visuel WHERE score < (SELECT score FROM score_visuel WHERE id_utilisateur = ?)";
+        $stmt = $conn->prepare($scoreSql);
+        $stmt->bind_param("s", $id_utilisateur);
+        $stmt->execute();
+        $stmt->store_result();
 
-    if ($stmt->num_rows>0) {
         // Récupérer les informations
-        $stmt->bind_result($score_visuel);
+        $stmt->bind_result($classement_visuel);
         $stmt->fetch();
+        $classement_visuel += 1; 
     }
 
     // Fermer la connexion
@@ -78,19 +120,22 @@
                 <div class="container">
                     <div class="image-container">
                         <img src="../Annexes/logo_reflexe.png" alt="Logo pour le jeu des réflexes">
-                        <div class="position" id="position-reflexe"><?= $score_reflexe?></div>
+                        <div class="classement" id="classement-reflexe"><strong>Classement:</strong> <?php if ($classement_reflexe != 0) echo $classement_reflexe; else echo "Non classé";?></div>
+                        <div class="score" id="score-reflexe"><strong>Score:</strong> <?php if ($score_reflexe != 0) echo $score_reflexe; else echo "Pas de score";?> ms</div>
                     </div>
                 </div>
                 <div class="container">
                     <div class="image-container">
                         <img src="../Annexes/logo_sequence.png" alt="Logo pour le jeu de mémoire de nombres">
-                        <div class="position" id="position-sequence"><?= $score_sequence?></div>
+                        <div class="classement" id="classement-sequence"><strong>Classement:</strong> <?php if ($classement_sequence != 0) echo $classement_sequence; else echo "Non classé";?></div>
+                        <div class="score" id="score-sequence"><strong>Score:</strong> Level <?php if ($score_sequence != 0) echo $score_sequence; else echo "Pas de score";?></div>
                     </div>
                 </div>
                 <div class="container">
                     <div class="image-container">
                         <img src="../Annexes/logo_visuel.png" alt="Logo pour le jeu de mémoire visuelle">
-                        <div class="position" id="position-visuel"><?= $score_visuel?></div>
+                        <div class="classement" id="classement-visuel"><strong>Classement:</strong> <?php if ($classement_visuel != 0) echo $classement_visuel; else echo "Non classé";?></div>
+                        <div class="score" id="score-visuel"><strong>Score:</strong> Level <?php if ($score_visuel != 0) echo $score_visuel; else echo "Pas de score";?></div>
                     </div>
                 </div>
             </div>
