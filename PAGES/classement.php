@@ -59,7 +59,7 @@
 ?>
 
 <!-- HEAD -->
-<?php require_once("../Components/header.php"); ?>
+<?php require_once("../Components/header.html"); ?>
 
 <head>
     <link href="../CSS/classement.css" rel="stylesheet" media="all">

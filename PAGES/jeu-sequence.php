@@ -1,5 +1,10 @@
+<?php 
+    // OBLIGATOIRE DE START LA SESSION AU DEBUT DE CHAQUE PAGE PHP QUI L'UTILISE
+    session_start();
+?>
+
 <!-- HEAD -->
-<?php require_once("../Components/header.php"); ?>
+<?php require_once("../Components/header.html"); ?>
 
 <head>
     <link href="../CSS/sequence-game.css" rel="stylesheet" media="all">

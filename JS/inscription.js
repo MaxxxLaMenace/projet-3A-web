@@ -7,15 +7,15 @@ document.addEventListener("DOMContentLoaded", () => {
         "Décédé"
     ];
 
-    const slider = document.getElementById("slider");
-    const curseur = document.getElementById("curseur");
+    const ageSlider = document.getElementById("slider");
+    const phoneSlider = document.getElementById("curseur");
     const output = document.getElementById("output");
     const phoneNumber = document.getElementById("phoneNumber");
     const ageHidden = document.getElementById("age");
-    const telephoneHidden = document.getElementById("telephone");
+    const phoneHidden = document.getElementById("telephone");
 
     // Met à jour la réponse quand le slider est déplacé
-    slider.addEventListener("input", () => {
+    ageSlider.addEventListener("input", () => {
         const value = slider.value;
         output.textContent = options[value];
         ageHidden.value = options[value];
@@ -27,11 +27,58 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // Met à jour l'affichage du numéro en fonction de la position du slider
-    curseur.addEventListener("input", () => {
-        phoneNumber.textContent = formatPhoneNumber(curseur.value);
-        telephoneHidden.value = formatPhoneNumber(curseur.value);
+    phoneSlider.addEventListener("input", () => {
+        phoneNumber.textContent = formatPhoneNumber(phoneSlider.value);
+        phoneHidden.value = formatPhoneNumber(phoneSlider.value);
     });
 
     // Initialiser le numéro
     phoneNumber.textContent = formatPhoneNumber(curseur.value);
+
+    // ----------------------- VALIDATIONDU FORMULAIRE ----------------------
+
+    const form = document.querySelector(".formulaire");
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password");
+    const countrySelect = document.getElementById("menu");
+    const colorSelect = document.getElementById("color");
+    const errorMsgContainer = document.getElementById("error-msg");
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
+
+    form.addEventListener("submit", function (event) {
+        const password = passwordInput.value;
+        let isValid = true;
+        let errorMessage = "";
+
+        // Validation du nom d'utilisateur (4 à 16 caractères)
+        const username = usernameInput.value.trim();
+        if (username.length < 4 || username.length > 16) {
+            isValid = false;
+            errorMessage += "Le nom d'utilisateur doit contenir entre 4 et 16 caractères.\n";
+        }
+
+        // Validation du mot de passe (minimum 6 caractères, 1 chiffre, 1 majuscule)
+        else if (!passwordRegex.test(password)) {
+            isValid = false;
+            errorMessage += "Le mot de passe doit contenir au moins 6 caractères, une majuscule et un chiffre.<br>";
+        }
+
+        // Validation du pays sélectionné
+        else if (countrySelect.value === "--choisir--") {
+            isValid = false;
+            errorMessage += "Veuillez choisir un pays.\n";
+        }
+
+        // Validation de la couleur préférée
+        else if (colorSelect.value === "--choisir--") {
+            isValid = false;
+            errorMessage += "Veuillez choisir une couleur préférée.\n";
+        }
+
+        // Empêcher l'envoi du formulaire si invalide
+        if (!isValid) {
+            errorMsgContainer.innerHTML = errorMessage;
+            event.preventDefault();
+        }
+    });
 });

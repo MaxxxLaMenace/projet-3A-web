@@ -52,7 +52,7 @@
 ?>
 
 <!-- HEAD -->
-<?php require_once("../Components/header.php"); ?>
+<?php require_once("../Components/header.html"); ?>
 
 <head>
     <link href="../CSS/inscription.css" rel="stylesheet" media="all">
@@ -72,56 +72,72 @@
             <h2 class="inscription">Inscription</h2>
 
             <!-- FORMULAIRE -->
-            <form action="inscription.php" method="POST">
+            <form class="formulaire" action="inscription.php" method="POST">
 
-                <?php if (isset($errorMsg) && !empty($errorMsg)): ?>
-                    <p style="color: red;"><?php echo $errorMsg; ?></p>
-                <?php endif; ?>
-
-                <label for="username">Nom d'utilisateur * :</label>
-                <input type="text" id="username" name="username" required>
-                <label for="password">Mot de passe * :</label>
-                <input type="password" id="password" name="password" required>
-                <div class="slide-container">
-                    <label>Âge :</label>
-                    <div class="output" id="output">2 ans</div>
-                    <input id="slider" name="slider" class="slider" type="range" min="0" max="4" value="1" step="1">
-                    <input type="hidden" id="age" name="age" value="2">
+                <div class="field">
+                    <div id="error-msg" style="color: red;"><?php if (isset($errorMsg) && !empty($errorMsg)): echo $errorMsg; endif;?></div>
                 </div>
 
-                <div class="dropdown">
-                    <label for="menu">Pays :</label><br><br>
-                    <select id="menu" name="menu">
-                        <option value="--choisir--">--choisir--</option>
-                        <option value="Mordor">Mordor</option>
-                        <option value="Lune">Lune</option>
-                        <option value="Atlantide">Atlantide</option>
-                        <option value="Narnia">Narnia</option>
-                    </select>
+                <div class="field">
+                    <label for="username">Nom d'utilisateur * :<br>(Entre 4 et 16 caractères)</label>
+                    <input class="input-field" type="text" id="username" name="username" required>
                 </div>
 
-                <div class="dropdown">
-                    <label for="color">Couleur préférée :</label><br><br>
-                    <select id="color" name="color">
-                        <option value="--choisir--">--choisir--</option>
-                        <option value="Pizza">Pizza</option>
-                        <option value="Banane">Banane</option>
-                        <option value="Spider-man">Spider-man</option>
-                        <option value="Chien saucisse">Chien saucisse</option>
-                    </select>
+                <div class="field">
+                    <label for="password">Mot de passe * :<br>(Minimum 6 caractères, 1 chiffre 1 majuscule)</label>
+                    <input class="input-field" type="password" id="password" name="password" required>
                 </div>
 
-                <div class="slide-container">
-                    <label>N° de téléphone :</label>
-                    <div class="phoneNumber" id="phoneNumber">07 99 99 99 99</div>
-                    <input id="curseur" name="curseur" class="curseur" type="range" min="0" max="999999999" value="799999999" step="1">
-                    <input type="hidden" id="telephone" name="telephone" value="07 99 99 99 99">
+                <div class="field">
+                    <div class="slide-container">
+                        <label>Âge * :</label>
+                        <div class="output" id="output">2 ans</div>
+                        <input class="input-field" id="slider" name="slider" class="slider" type="range" min="0" max="4" value="1" step="1">
+                        <input class="input-field" type="hidden" id="age" name="age" value="2">
+                    </div>
                 </div>
-                <button type="submit">S'inscrire</button>
+
+                <div class="field">
+                    <div class="dropdown">
+                        <label for="menu">Pays * :</label><br><br>
+                        <select class="input-field" id="menu" name="menu">
+                            <option value="--choisir--">--choisir--</option>
+                            <option value="Mordor">Mordor</option>
+                            <option value="Lune">Lune</option>
+                            <option value="Atlantide">Atlantide</option>
+                            <option value="Narnia">Narnia</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="dropdown">
+                        <label for="color">Couleur préférée * :</label><br><br>
+                        <select class="input-field" id="color" name="color">
+                            <option value="--choisir--">--choisir--</option>
+                            <option value="Pizza">Pizza</option>
+                            <option value="Banane">Banane</option>
+                            <option value="Spider-man">Spider-man</option>
+                            <option value="Chien saucisse">Chien saucisse</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="slide-container">
+                        <label>N° de téléphone * :</label>
+                        <div class="phoneNumber" id="phoneNumber">07 99 99 99 99</div>
+                        <input class="input-field" id="curseur" name="curseur" class="curseur" type="range" min="0" max="999999999" value="799999999" step="1">
+                        <input class="input-field" type="hidden" id="telephone" name="telephone" value="07 99 99 99 99">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <button type="submit">S'inscrire</button>
+                </div>
             </form>
         </main>
 
-        <!-- TODO : modifier ca -->
         <p class="mention">Champs marqués (*) obligatoires.<br>Les autres informations ne seront pas sauvegardés.</p>
 
     </div>

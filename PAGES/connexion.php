@@ -52,7 +52,7 @@
 ?>
 
 <!-- HEAD -->
-<?php require_once("../Components/header.php"); ?>
+<?php require_once("../Components/header.html"); ?>
 
 <head>
     <link href="../CSS/connexion.css" rel="stylesheet" media="all">
@@ -71,23 +71,30 @@
             <h2 class="inscription">Connexion</h2>
 
             <!-- FORMULAIRE -->
-            <form action="connexion.php" method="POST">
+            <form class="formulaire" action="connexion.php" method="POST">
                 
-                <?php if (isset($errorMsg) && !empty($errorMsg)): ?>
-                    <p style="color: red;"><?php echo $errorMsg; ?></p>
-                <?php endif; ?>
+                <div class="field">
+                    <?php if (isset($errorMsg) && !empty($errorMsg)): ?>
+                        <p style="color: red;"><?php echo $errorMsg; ?></p>
+                    <?php endif; ?>
+                </div>
                 
-                <label for="username">Nom d'utilisateur * :</label><br><br>
-                <input type="text" id="username" name="username" required>
+                <div class="field">
+                    <label for="username">Nom d'utilisateur * :</label>
+                    <input class="input-field" type="text" id="username" name="username" required>
+                </div>
                 
-                <label for="password">Mot de passe * :</label><br><br>
-                <input type="password" id="password" name="password" required>
+                <div class="field">
+                    <label for="password">Mot de passe * :</label>
+                    <input class="input-field" type="password" id="password" name="password" required>
+                </div>
                 
-                <button type="submit">Se connecter</button>
+                <div class="field">
+                    <button type="submit">Se connecter</button>
+                </div>
             </form>
         </main>
         
-        <!-- TODO : modifier ca -->
         <p class="mention">Champs marqués (*) obligatoires.<br>Les autres informations ne seront pas sauvegardés.</p>
 
     </div>
