@@ -57,7 +57,7 @@
 
     // Si il existe récupère son score
     if ($joue_sequence == 1) {
-        $scoreSql = "SELECT count(*) as classement FROM score_sequence WHERE score < (SELECT score FROM score_sequence WHERE id_utilisateur = ?)";
+        $scoreSql = "SELECT count(*) as classement FROM score_sequence WHERE score > (SELECT score FROM score_sequence WHERE id_utilisateur = ?)";
         $stmt = $conn->prepare($scoreSql);
         $stmt->bind_param("s", $id_utilisateur);
         $stmt->execute();
@@ -83,7 +83,7 @@
 
     // Si il existe récupère son score
     if ($joue_visuel == 1) {
-        $scoreSql = "SELECT count(*) as classement FROM score_visuel WHERE score < (SELECT score FROM score_visuel WHERE id_utilisateur = ?)";
+        $scoreSql = "SELECT count(*) as classement FROM score_visuel WHERE score > (SELECT score FROM score_visuel WHERE id_utilisateur = ?)";
         $stmt = $conn->prepare($scoreSql);
         $stmt->bind_param("s", $id_utilisateur);
         $stmt->execute();
@@ -121,21 +121,21 @@
                     <div class="image-container">
                         <img src="../Annexes/logo_reflexe.png" alt="Logo pour le jeu des réflexes">
                         <div class="classement" id="classement-reflexe"><strong>Classement:</strong> <?php if ($classement_reflexe != 0) echo $classement_reflexe; else echo "Non classé";?></div>
-                        <div class="score" id="score-reflexe"><strong>Score:</strong> <?php if ($score_reflexe != 0) echo $score_reflexe; else echo "Pas de score";?> ms</div>
+                        <div class="score" id="score-reflexe"><strong>Score:</strong> <?php if ($score_reflexe != 0) echo $score_reflexe." ms"; else echo "Pas de score";?></div>
                     </div>
                 </div>
                 <div class="container">
                     <div class="image-container">
                         <img src="../Annexes/logo_sequence.png" alt="Logo pour le jeu de mémoire de nombres">
                         <div class="classement" id="classement-sequence"><strong>Classement:</strong> <?php if ($classement_sequence != 0) echo $classement_sequence; else echo "Non classé";?></div>
-                        <div class="score" id="score-sequence"><strong>Score:</strong> Level <?php if ($score_sequence != 0) echo $score_sequence; else echo "Pas de score";?></div>
+                        <div class="score" id="score-sequence"><strong>Score:</strong> <?php if ($score_sequence != 0) echo "Level ".$score_sequence; else echo "Pas de score";?></div>
                     </div>
                 </div>
                 <div class="container">
                     <div class="image-container">
                         <img src="../Annexes/logo_visuel.png" alt="Logo pour le jeu de mémoire visuelle">
                         <div class="classement" id="classement-visuel"><strong>Classement:</strong> <?php if ($classement_visuel != 0) echo $classement_visuel; else echo "Non classé";?></div>
-                        <div class="score" id="score-visuel"><strong>Score:</strong> Level <?php if ($score_visuel != 0) echo $score_visuel; else echo "Pas de score";?></div>
+                        <div class="score" id="score-visuel"><strong>Score:</strong> <?php if ($score_visuel != 0) echo "Level ".$score_visuel; else echo "Pas de score";?></div>
                     </div>
                 </div>
             </div>
