@@ -1,3 +1,4 @@
+<!-- Page des scores et classements de l'utilisateur-->
 <?php
     require_once("../BDD/connexion_bdd.php");
 

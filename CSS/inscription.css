@@ -1,3 +1,5 @@
+/* Page du formulaire d'inscription */
+
 .page-inscription {
     display: flex;
     flex-direction: column;
@@ -39,13 +41,14 @@ label {
     margin-bottom: .5rem;
 }
 
-/*--------------- Slider âge -------------*/
+/*--------------- Slider âge & num. tél -------------*/
 
 .slide-container {
     width: 200px;
 }
 
-.slider, .curseur {
+.slider,
+.curseur {
     width: 90%;
     appearance: none;
     height: 8px;
@@ -55,11 +58,13 @@ label {
     transition: background 0.3s;
 }
 
-.slider:hover, .curseur:hover {
+.slider:hover,
+.curseur:hover {
     background: #bbb;
 }
 
-.slider::-webkit-slider-thumb, .curseur::-webkit-slider-thumb {
+.slider::-webkit-slider-thumb,
+.curseur::-webkit-slider-thumb {
     appearance: none;
     width: 20px;
     height: 20px;
@@ -68,7 +73,8 @@ label {
     cursor: pointer;
 }
 
-.slider::-moz-range-thumb, .curseur::-moz-range-thumb {
+.slider::-moz-range-thumb,
+.curseur::-moz-range-thumb {
     width: 20px;
     height: 20px;
     background: #4caf50;
@@ -76,12 +82,13 @@ label {
     cursor: pointer;
 }
 
-.output, .phoneNumber {
+.output,
+.phoneNumber {
     font-size: 1.2em;
     color: #333;
 }
 
-/*---------- Menu déroulant pays ----------*/
+/*---------- Menu déroulant pays & couleur pref ----------*/
 
 select {
     border: 2px solid #ccc;

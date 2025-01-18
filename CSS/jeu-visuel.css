@@ -1,3 +1,5 @@
+/* Jeu de mémoire visuelle */
+
 .jeu-visuel {
     display: flex;
     flex-direction: column;
@@ -79,6 +81,8 @@
     margin-top: 50px;
     margin-right: 100px;
 }
+
+/*----------- Responsive -----------*/
 
 @media (max-width:976px) {
     .zone-jeu {

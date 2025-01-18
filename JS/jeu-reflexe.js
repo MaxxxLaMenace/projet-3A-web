@@ -1,4 +1,7 @@
+// Jeu de réflexes
+
 function getRandomDelay(min, max) {
+    // Choisis un délai aléatoire entre min et max (en secondes)
     return Math.floor(Math.random() * (max-min+1)) + min;
 }
 
@@ -26,12 +29,13 @@ let gameActive = 0;
 let time;
 
 function calculeReflexe() {
+    // Fonction qui retourne le temps de réaction puis arrête le jeu
     reflButton.style.background = 'green';
     gameActive = 2;
     time = 0;
     time = Date.now();
     reflButton.addEventListener('click', () => {
-        if (gameActive==2) {
+        if (gameActive==2) {    // si l'écran est vert et donc que le joueur doit cliquer
             time = Date.now() - time;
             reflButton.style.background = '#48C6DA';
             result.textContent = time + " ms";
@@ -47,6 +51,7 @@ function calculeReflexe() {
 
 
 reflButton.addEventListener('click', () => {
+    // Fonction qui lance le jeu si celui-ci n'est pas déjà actif
     if (gameActive==0) {
         gameActive = 1;
         setTimeout(calculeReflexe, randomDelay);
@@ -57,6 +62,7 @@ reflButton.addEventListener('click', () => {
 
 
 function enregistrerScore(score) {
+    // Fonction qui enregistre le score du joueur dans la BDD
     fetch('../BACK/enregistrer_score.php', {
         method: 'POST',
         body: JSON.stringify({ score: score, jeu: "reflexe" }),

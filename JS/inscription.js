@@ -1,3 +1,5 @@
+// Formulaire d'inscription
+
 document.addEventListener("DOMContentLoaded", () => {
     const options = [
         "Embryon",
@@ -35,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialiser le numéro
     phoneNumber.textContent = formatPhoneNumber(curseur.value);
 
-    // ----------------------- VALIDATIONDU FORMULAIRE ----------------------
+    // ----------------------- VALIDATION DU FORMULAIRE ----------------------
 
     const form = document.querySelector(".formulaire");
     const usernameInput = document.getElementById("username");

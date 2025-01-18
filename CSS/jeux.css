@@ -1,3 +1,5 @@
+/* Page du choix du jeu */
+
 .gamePage {
     display: flex;
     flex-direction: column;
@@ -38,6 +40,8 @@
     margin: auto;
 }
 
+/*----------- Responsive -----------*/
+
 @media (max-width:1460px) {
     .choice {
         flex-direction: column;
@@ -53,6 +57,9 @@
         height: 23.5rem;
     }
 }
+
+/* Pour les écrans d'ordinateur : les descriptions sont par cachées par défaut
+et s'affiche lorsque l'utilisateur passe sa souris sur le container du jeu en question */
 
 @media (min-width:1461px) {
     .text-spe {

@@ -1,3 +1,5 @@
+// Jeu de séquence de chiffres
+
 function getRandomNumber(min, max) {
     // Fonction qui retourne un nombre entier aléatoire entre min et max
 
@@ -90,6 +92,8 @@ function startProgress(duration) {
 }
 
 function enregistrerScore(score) {
+    // Fonction qui enregistre le score du joueur dans la BDD
+
     fetch('../BACK/enregistrer_score.php', {
         method: 'POST',
         body: JSON.stringify({ score: score, jeu: "sequence" }),

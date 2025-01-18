@@ -1,3 +1,4 @@
+<!-- Page de connexion -->
 <?php
     // Ce code PHP est exécuté si l'utilisateur à validé le formulaire de connexion pour pouvoir le connecter puis le rediriger
 

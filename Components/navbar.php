@@ -1,3 +1,4 @@
+<!--En-tête de toutes les pages du site pour éviter de recopier-->
 <nav class="navbar">
     <div class="navbar-container">
         <div class="navbar-left">

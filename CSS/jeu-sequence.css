@@ -1,3 +1,5 @@
+/* Jeu de séquences de chiffre */
+
 .jeu-sequence {
     display: flex;
     flex-direction: column;
@@ -33,6 +35,7 @@
     height: 2rem;
 }
 
+/* Barre de progression qui indique le temps restant pour retenir la séquence*/
 #progress-container {
     margin-top: 50px;
     width: 100%;
@@ -67,19 +70,22 @@
     max-width: 40rem;
 }
 
+/* Retire les petites flèches dans les champs de texte du formulaire */
 input[type="number"] {
     /* Pour Chrome, Safari, Edge, Opera */
     -webkit-appearance: none;
     -moz-appearance: textfield; /* Pour Firefox */
     appearance: textfield;
-  }
+}
   
-  /* Pour éviter que les marges des spinners restent visibles dans Chrome */
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
+/* Pour éviter que les marges des spinners restent visibles dans Chrome */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
-  }
+}
+
+/*----------- Responsive -----------*/
 
 @media (max-width:1020px) {
     .zone-jeu {

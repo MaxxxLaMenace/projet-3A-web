@@ -1,3 +1,5 @@
+/* Pied de page des pages du site */
+
 .footer {
     background-color: #333;
     color: white;
@@ -55,6 +57,8 @@
     font-size: 14px;
 }
 
+/* Lien souligné quand survolé par la souris pour faire comprendre
+à l'utilisateur qu'il est cliquable */
 .social-icon:hover {
     text-decoration: underline;
 }

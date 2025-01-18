@@ -1,3 +1,5 @@
+/* Style général appliqué à toutes les pages */
+
 html, body {
     width: 100%;
     padding: 0;
@@ -6,7 +8,7 @@ html, body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #defbff;
-    /*background-image: url(../Annexes/quadrillage.png);*/
+    /*background-image: url(../Annexes/quadrillage.png);*/  /*idée abandonnée*/
 }
 
 .content {

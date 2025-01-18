@@ -1,3 +1,5 @@
+/* Jeu de réflexes */
+
 .jeu-reflexe {
     display: flex;
     flex-direction: column;
@@ -33,6 +35,8 @@
     top: 30%;
     min-width: 20rem;
 }
+
+/*----------- Responsive -----------*/
 
 @media (max-width:950px) {
     .infos {

@@ -1,3 +1,5 @@
+// Carrousel qui servait à choisir le jeu, mais idée abandonnée car pas esthétique...
+
 const track = document.querySelector('.carousel-track');
 const items = document.querySelectorAll('.carousel-item');
 const prevButton = document.querySelector('.prev');

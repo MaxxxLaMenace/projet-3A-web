@@ -1,3 +1,4 @@
+<!-- Page du choix du jeu -->
 <?php 
     // OBLIGATOIRE DE START LA SESSION AU DEBUT DE CHAQUE PAGE PHP QUI L'UTILISE
     session_start();

@@ -1,3 +1,5 @@
+/* Page d'accueil du site */
+
 .homePage {
     padding-top: 6rem;
     display: flex;
@@ -45,6 +47,7 @@
     background-color: #48C6DA;
 }
 
+/* Pour les écrans plus pettis (téléphones/tablettes) */
 @media (max-width:975px) {
     .choice {
         flex-direction: column;

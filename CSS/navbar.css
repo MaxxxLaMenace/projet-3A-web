@@ -1,3 +1,5 @@
+/* En-tête présente sur chaque page du site */
+
 .navbar {
     height: 80px;
     width: 100%;
@@ -84,6 +86,8 @@
 .navbar-buttons .btn:hover {
     background-color: #1d2889;
 }
+
+/*----------- Responsive -----------*/
 
 @media (max-width: 768px) {
     .navbar {

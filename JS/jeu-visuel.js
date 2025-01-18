@@ -1,3 +1,5 @@
+// Jeu de mémoire visuelle
+
 let level = 0;
 let number;
 let gameActive = 0;
@@ -55,7 +57,7 @@ function print_grille() {
     submit.textContent = "Confirmer";
     const returnIndices = [];
 
-    if (level<=3) {
+    if (level<=3) {                                                     // jusqu'au niveau 3, la grille est petite (3x3)
         const indices = randomNumbers(9, level+2);
         indices.forEach(index => {
             timed_highlight(buttons[index-1]);
@@ -65,7 +67,7 @@ function print_grille() {
         })
     }
 
-    else if ((level>3) && (level<=6)) {
+    else if ((level>3) && (level<=6)) {                                 // à partir du niveau 4, la grille s'agrandit (4x4)
         grille.style.gridTemplateColumns = 'repeat(4, 25%)';
         for (let i=0; i<16; ++i) {
             buttons[i].style.width = '75px';
@@ -81,7 +83,7 @@ function print_grille() {
         })
     }
 
-    else if ((level>6) && (level<= 12)) {
+    else if ((level>6) && (level<= 12)) {                               // à partir du niveau 7, la grille s'agrandit (5x5)
         grille.style.gridTemplateColumns = 'repeat(5, 20%)';
         for (let i=0; i<25; ++i) {
             buttons[i].style.width = '60px';
@@ -97,7 +99,7 @@ function print_grille() {
         })
     }
 
-    else {
+    else {                                                              // à partir du niveau 12, il n'ya plus de nouveau carré en plus à retenir par niveau
         const indices = randomNumbers(25, 12);
         indices.forEach(index => {
             timed_highlight(buttons[index-1]);
@@ -164,6 +166,8 @@ submit.addEventListener('click', () => {
 });
 
 function enregistrerScore(score) {
+    // Fonction qui enregistre le score du joueur dans la BDD
+
     fetch('../BACK/enregistrer_score.php', {
         method: 'POST',
         body: JSON.stringify({ score: score, jeu: "visuel" }),

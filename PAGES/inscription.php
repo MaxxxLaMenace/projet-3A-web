@@ -1,3 +1,4 @@
+<!-- Page d'incription -->
 <?php
     // Ce code PHP est exécuté si l'utilisateur à validé le formulaire d'inscription pour pouvoir le connecter puis le rediriger
 
