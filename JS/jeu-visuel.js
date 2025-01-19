@@ -58,6 +58,15 @@ function print_grille() {
     const returnIndices = [];
 
     if (level<=3) {                                                     // jusqu'au niveau 3, la grille est petite (3x3)
+        grille.style.gridTemplateColumns = 'repeat(3, 33%)';
+        grille.style.gap = '30px 20px';
+        for (let i=0; i<9; i++) {                                       // 9 boutons affichés
+            buttons[i].style.width = '100px';
+            buttons[i].style.height = '100px';
+        }
+        for (let i=9; i<25; i++) {
+            buttons[i].style.display = 'none';                          // les autres sont cachés
+        }
         const indices = randomNumbers(9, level+2);
         indices.forEach(index => {
             timed_highlight(buttons[index-1]);
@@ -69,10 +78,11 @@ function print_grille() {
 
     else if ((level>3) && (level<=6)) {                                 // à partir du niveau 4, la grille s'agrandit (4x4)
         grille.style.gridTemplateColumns = 'repeat(4, 25%)';
+        grille.style.gap = '20px 10px';
         for (let i=0; i<16; ++i) {
             buttons[i].style.width = '75px';
             buttons[i].style.height = '75px';
-            buttons[i].style.display = 'block';
+            buttons[i].style.display = 'block';                         // 16 boutons affichés
         }
         const indices = randomNumbers(16, level+1);
         indices.forEach(index => {
@@ -85,7 +95,8 @@ function print_grille() {
 
     else if ((level>6) && (level<= 12)) {                               // à partir du niveau 7, la grille s'agrandit (5x5)
         grille.style.gridTemplateColumns = 'repeat(5, 20%)';
-        for (let i=0; i<25; ++i) {
+        grille.style.gap = '10px 5px';
+        for (let i=0; i<25; ++i) {                                      // tous les boutons (25) affichés
             buttons[i].style.width = '60px';
             buttons[i].style.height = '60px';
             buttons[i].style.display = 'block';

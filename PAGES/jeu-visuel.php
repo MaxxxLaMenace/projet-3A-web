@@ -52,15 +52,17 @@
                     <button id="submit">Commencer</button>
                 </div>
             </div>
-            <img class="stats" src="../Annexes/stats-visuel.png">
-            <div>
-                <p class="infos">
-                    Ce jeu teste votre mémoire visuelle.<br><br>
-                    La mémoire visuelle est une composante de la mémoire perceptive qui a pour fonction de retenir et traiter les informations visuelles.<br><br>
-                    Il n'est pas rare d'entendre de la bouche de personnes qu'ils ou elles n'auraient pas "une bonne mémoire visuelle". En réalité, même si nous avons en effet 
-                    tous des prédispositions différentes, nous avons tous une bonne mémoire visuelle !
-                </p>
-            </div>      
+            <div class='infos'>
+                <img class="stats" src="../Annexes/stats-visuel.png">
+                <div>
+                    <p class="text">
+                        Ce jeu teste votre mémoire visuelle.<br><br>
+                        La mémoire visuelle est une composante de la mémoire perceptive qui a pour fonction de retenir et traiter les informations visuelles.<br><br>
+                        Il n'est pas rare d'entendre de la bouche de personnes qu'ils ou elles n'auraient pas "une bonne mémoire visuelle". En réalité, même si nous avons en effet 
+                        tous des prédispositions différentes, nous avons tous une bonne mémoire visuelle !
+                    </p>
+                </div>  
+            </div>    
         </main>
     </div>
 

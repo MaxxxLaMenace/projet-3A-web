@@ -21,7 +21,7 @@
 #container-grille {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
     
@@ -38,11 +38,10 @@
 }
 
 .grille {
-    padding: 0 100px;
     display: grid;
     grid-template-columns: repeat(3, 33%);
     align-items: center;
-    row-gap: 30px;
+    gap: 30px 20px;
 }
 
 .grille button {
@@ -71,15 +70,21 @@
     height: 30px;
 }
 
+.infos {
+    display: flex;
+    flex-direction: row;
+    padding: 3rem 15%;
+    gap: 5rem;
+}
+
 .stats {
     height: 30rem;
     border: 2px solid #000;
     border-radius: 5px;
 }
 
-.infos {
-    margin-top: 50px;
-    margin-right: 100px;
+.text {
+    max-width: 40rem;
 }
 
 /*----------- Responsive -----------*/
@@ -103,5 +108,8 @@
     .stats {
         width: 20rem;
         height: 20rem;
+    }
+    .grille {
+        margin-right: 20px;
     }
 }
